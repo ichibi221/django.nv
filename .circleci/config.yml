@@ -27,17 +27,6 @@ jobs:
           docker build -t /django.nv .   # Build the application into Docker image
           docker push /django.nv         # Push the image into registry
 
-  integration:
-    docker:
-      - image: python:3.6
-    steps:
-      - checkout
-      - run:
-          command: |
-            echo "This is an integration step"
-            exit 1
-          when: always                    # Even if the job fails, continue to the next stages
-
   prod:
     docker:
       - image: python:3.6
