@@ -44,5 +44,4 @@ workflows:
             - build 
       - prod:
           type: approval
-          requires:
-            - integration
+          
