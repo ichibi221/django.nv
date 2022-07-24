@@ -22,7 +22,7 @@ jobs:
     steps:
       - checkout
 
-      - run:
+      - run: |
           echo  | docker login -u  --password-stdin |
           docker build -t /django.nv .   # Build the application into Docker image
           docker push /django.nv         # Push the image into registry
